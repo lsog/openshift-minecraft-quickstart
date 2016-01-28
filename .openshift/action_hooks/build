@@ -6,7 +6,7 @@ MINECRAFT_SERVER_JAR=minecraft_server.jar
 cd $OPENSHIFT_DATA_DIR
 
 if [ ! -e $MINECRAFT_SERVER_JAR ]; then
-   wget https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar -O $MINECRAFT_SERVER_JAR
+   wget https://s3.amazonaws.com/Minecraft.Download/versions/1.8.9/minecraft_server.1.8.9.jar -O $MINECRAFT_SERVER_JAR
 fi
 
 if [ ! -e "$SERVER_PROPERTIES" ]; then
