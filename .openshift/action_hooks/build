@@ -1,9 +1,14 @@
 #!/bin/bash
 
+EULA=eula.txt
 SERVER_PROPERTIES=server.properties
 MINECRAFT_SERVER_JAR=minecraft_server.1.8.9.jar
 
 cd $OPENSHIFT_DATA_DIR
+
+if [ ! -e "$EULA" ]; then
+   erb $OPENSHIFT_REPO_DIR/${EULA}.erb > $EULA
+fi 
 
 if [ ! -e $MINECRAFT_SERVER_JAR ]; then
    wget https://s3.amazonaws.com/Minecraft.Download/versions/1.8.9/minecraft_server.1.8.9.jar -O $MINECRAFT_SERVER_JAR
